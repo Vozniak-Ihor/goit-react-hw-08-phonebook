@@ -4,7 +4,6 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 axios.defaults.baseURL = 'https://64b03a19c60b8f941af56ea1.mockapi.io/contacts';
 
-
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
   async (_, { rejectWithValue }) => {
