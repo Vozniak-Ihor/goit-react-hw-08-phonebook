@@ -1,4 +1,4 @@
-.SignUpConteiner {
+/* .SignUpConteiner {
   margin: 0;
   padding: 0;
   display: flex;
@@ -7,32 +7,32 @@
   min-height: 100vh;
   font-family: 'Jost', sans-serif;
   background: linear-gradient(to bottom, #6f00af, #302b63, #270192);
-}
+} */
 
 /* ============================SignUpForm ============================================= */
 
-.SignUpForm {
-  width: 455px; /* Increased width by 1.3 times (350 * 1.3) */
-  height: 650px; /* Increased height by 1.3 times (500 * 1.3) */
+/* .SignUpForm {
+  width: 455px; 
+  height: 650px; 
   background: red;
   overflow: hidden;
   background: url('https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38')
     no-repeat center/cover;
   border-radius: 10px;
   box-shadow: 5px 20px 50px #000;
-}
+} */
 
-.chk {
+/* .chk {
   display: none;
-}
-.SignUp {
+} */
+/* .SignUp {
   position: relative;
   width: 100%;
   height: 100%;
-}
+} */
 .SignUpLabel {
   color: #fff;
-  font-size: 3em;
+  font-size: 2.5em;
   justify-content: center;
   display: flex;
   margin: 78px;
@@ -44,7 +44,7 @@
 }
 
 .SignUpLabel:hover {
-  font-size: 2.5em;
+  font-size: 2em;
 }
 .SignUpInput {
   width: 78%;
@@ -79,7 +79,7 @@
   background: #6d44b8;
 }
 
-.chk:checked ~ .LoginForm {
+/* .chk:checked ~ .LoginForm {
   transform: translateY(-600px);
 }
 .chk:checked ~ .LoginForm .SignUpLabel {
@@ -87,11 +87,11 @@
 }
 .chk:checked ~ .SignUp .SignUpLabel {
   transform: scale(0.6);
-}
+} */
 
 /* ============================SignUpForm ============================================= */
 /* ============================LoginForm ============================================= */
-.LoginForm {
+/* .LoginForm {
   height: 598px;
   background: #eee;
   border-radius: 78% / 10%;
@@ -163,12 +163,12 @@
 }
 .chk:checked ~ .Login .LoginLabel {
   transform: scale(0.6);
-}
+} */
 
 /* ============================LoginForm ============================================= */
 /* ============================backBtn============================= */
 
-.backBtn {
+/* .backBtn {
   position: fixed;
   top: 5%;
   left: 5%;
@@ -181,5 +181,5 @@
   cursor: pointer;
   background-color: #cfcece;
   box-shadow: 5px 5px #000;
-}
+} */
 /* ============================backBtn============================= */

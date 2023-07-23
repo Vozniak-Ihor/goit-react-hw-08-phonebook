@@ -6,19 +6,18 @@ import React, { useEffect } from 'react';
 import AppBar from '../AppBar/AppBar';
 import Home from 'pages/Home/Home';
 import Contacts from 'pages/Contacts/Contacts';
-import Login from 'pages/Login/Login';
-import SignUp from 'pages/SignUp/SignUp';
-import RestrictedRoute from '../RestrictedRoute/RestrictedRoute';
-import PrivateRoute from '../PrivateRoute/PrivateRoute';
+import LoginSingUp from 'pages/LoginSingUp/LoginSingUp';
+// import RestrictedRoute from '../RestrictedRoute/RestrictedRoute';
+// import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import { Route, Routes, Navigate } from 'react-router-dom';
 
 function App() {
   return (
     <Routes>
-      <Route path="/" >
+      <Route path="/">
         <Route index element={<Home />} />
         {/* <Route path="/login" element={<Login />} /> */}
-        <Route path="/registration" element={<SignUp />} />
+        <Route path="/registration" element={<LoginSingUp/>} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
