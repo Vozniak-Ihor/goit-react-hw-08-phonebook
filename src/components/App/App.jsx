@@ -14,9 +14,8 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 function App() {
   return (
     <Routes>
-      <Route path="/">
+      <Route path="/" element={ <AppBar/>}>
         <Route index element={<Home />} />
-        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/registration" element={<LoginSingUp/>} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="*" element={<Navigate to="/" replace />} />

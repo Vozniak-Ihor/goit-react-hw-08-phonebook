@@ -41,35 +41,39 @@ const SignUp = () => {
   };
   return (
     <>
-  
-        <form>
-          <label htmlFor="chk" aria-hidden="true" className={css.SignUpLabel}>
-            Sign up
-          </label>
-          <input
-            type="text"
-            name="txt"
-            placeholder="User name"
-            required
-            className={css.SignUpInput}
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            required
-            className={css.SignUpInput}
-          />
-          <input
-            type="password"
-            name="pswd"
-            placeholder="Password"
-            required
-            className={css.SignUpInput}
-          />
-          <button className={css.SignUpBtn}>Sign up</button>
-        </form>
-     
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="chk" aria-hidden="true" className={css.SignUpLabel}>
+          Sign up
+        </label>
+        <input
+          type="text"
+          name="name"
+          placeholder="User name"
+          required
+          value={name}
+          onChange={handleChange}
+          className={css.SignUpInput}
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          value={email}
+          onChange={handleChange}
+          className={css.SignUpInput}
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+          value={password}
+          onChange={handleChange}
+          className={css.SignUpInput}
+        />
+        <button className={css.SignUpBtn}>Sign up</button>
+      </form>
     </>
   );
 };

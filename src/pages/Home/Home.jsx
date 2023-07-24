@@ -2,14 +2,10 @@ import { NavLink } from 'react-router-dom';
 import img from './website_icon2.png';
 import React from 'react';
 import css from './Home.module.css';
-import { findByLabelText } from '@testing-library/react';
 const Home = () => {
   return (
     <>
-      {' '}
-      <NavLink to="/contacts">
-        <button className={css.backBtn}>Back</button>
-      </NavLink>
+   
       <div className={css.header}>
         <div className={css.innerHeader}>
             <h1 className={css.homeTitle}>Hello I'm your phone book </h1>

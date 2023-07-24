@@ -1,18 +1,23 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { instance , setAuthHeader} from './auth/operations';
 
-axios.defaults.baseURL = 'https://64b03a19c60b8f941af56ea1.mockapi.io/contacts';
 
 export const fetchContacts = createAsyncThunk(
-  'contacts/fetchAll',
-  async (_, { rejectWithValue }) => {
-     console.log('fdfsfsdf');
+  'contacts/fetch',
+  async (_, thunkAPI) => {
     try {
-      const response = await axios.get('/contacts');
+      const state = thunkAPI.getState();
+      if (state.auth.token) {
+        setAuthHeader(state.auth.token);
+      } else {
+        throw new Error('No token');
+      }
+      const response = await instance('/contacts');
       return response.data;
     } catch (error) {
-      return rejectWithValue(error.message);
+      thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -22,7 +27,7 @@ export const addContact = createAsyncThunk(
     async (contact, { rejectWithValue }) => {
        
         try {
-            const response = await axios.post('/contacts', contact);
+            const response = await instance.post('/contacts', contact);
               Notify.success('Сontact added', { fontSize: '15px', width: '200px' });
             return response.data;
         } catch (error) {
@@ -35,7 +40,7 @@ export const deleteContact = createAsyncThunk(
   'contacts/deleteContact',
   async (id, thunkAPI) => {
     try {
-      const response = await axios.delete(`/contacts/${id}`);
+      const response = await instance.delete(`/contacts/${id}`);
       Notify.failure('Contact deleted', {
         fontSize: '15px',
         width: '200px',

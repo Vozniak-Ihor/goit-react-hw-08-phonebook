@@ -1,17 +1,45 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import UserMenu from './UserMenu/UserMenu';
+import { isLoggedInSelector } from '../../redux/auth/selectors';
+import { useSelector } from 'react-redux';
+import css from './AppBar.module.css';
 
 const AppBar = () => {
+  const isLoggedIn = useSelector(isLoggedInSelector);
   return (
     <>
-      <header>
-        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-          <NavLink to="/">Home</NavLink>
-          {/* <NavLink to="/login">login</NavLink> */}
-          <NavLink to="/registration">registration</NavLink>
-          <NavLink to="/contacts">contant</NavLink>
+      <header className={`${css.header}`}>
+        <div className={css.headerConteiner}>
+          <NavLink
+            to="/"
+            className={css.AppBarLink}
+          >
+            Home
+          </NavLink>
+          {isLoggedIn && (
+            <NavLink
+              to="/contacts"
+              className={css.AppBarLink}
+            >
+              Contants
+            </NavLink>
+          )}
+          {!isLoggedIn && (
+            <NavLink
+              to="/registration"
+              className={css.AppBarLink}
+            >
+              Sind Up
+            </NavLink>
+          )}
+          {isLoggedIn && <UserMenu />}
         </div>
       </header>
-      <Outlet />
+
+
+
+      
+      <Outlet></Outlet>
     </>
   );
 };
