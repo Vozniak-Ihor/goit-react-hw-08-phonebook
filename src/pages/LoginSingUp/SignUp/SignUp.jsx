@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { isLoadingSelector } from '../../../redux/auth/selectors';
 import { registrationThunk } from 'redux/auth/operations';
 import css from './SignUp.module.css';
 const SignUp = () => {
+  const isLoading = useSelector(isLoadingSelector);
   const dispatch = useDispatch();
 
   const [name, setName] = useState('');
@@ -72,7 +74,9 @@ const SignUp = () => {
           onChange={handleChange}
           className={css.SignUpInput}
         />
-        <button className={css.SignUpBtn}>Sign up</button>
+        <button className={`${css.SignUpBtn}`}>
+          {isLoading ? <span className={css.spinner}></span> : 'Sign up'}
+        </button>
       </form>
     </>
   );

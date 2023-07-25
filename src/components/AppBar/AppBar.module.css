@@ -1,10 +1,11 @@
- /* Стилі для навігаційного меню */
+/* Стилі для навігаційного меню */
 .header {
-  background-color: #ffffff; 
+  background-color: #ffffff;
   padding: 10px;
+  border-bottom: 1px solid black;
 }
 
-.headerConteiner {padding: 1em;
+.headerConteiner {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,5 +37,4 @@
 .AppBarLink:hover::after,
 .AppBarLink.active::after {
   opacity: 1; /* При наведенні або активній сторінці - підкреслення видиме */
-} 
-
+}

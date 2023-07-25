@@ -11,7 +11,7 @@
 }
 
 .LoginLabel {
-  color: #573b8a;;
+  color: #573b8a;
   font-size: 2.5em;
   justify-content: center;
   display: flex;
@@ -70,4 +70,20 @@
 }
 .chk:checked ~ .Login .LoginLabel {
   transform: scale(0.6);
+}
+
+.spinner {
+  display: inline-block;
+  width: 60px;
+  height: 10px;
+  border-radius: 15px;
+  background: white;
+  clip-path: inset(0 100% 0 0);
+  animation: move 2s steps(100) infinite;
+}
+
+@keyframes move {
+  to {
+    clip-path: inset(0 10% 0 0);
+  }
 }

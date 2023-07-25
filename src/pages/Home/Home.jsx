@@ -1,14 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import img from './website_icon2.png';
 import React from 'react';
 import css from './Home.module.css';
 const Home = () => {
   return (
     <>
-   
       <div className={css.header}>
         <div className={css.innerHeader}>
-            <h1 className={css.homeTitle}>Hello I'm your phone book </h1>
+          <h1 className={css.homeTitle}>Hello I'm your phone book </h1>
           <div className={css.containerNavLink}>
             <NavLink to="/registration" className={css.btn}>
               <svg width="280px" height="60px" viewBox="0 0 280 60">
@@ -18,7 +16,6 @@ const Home = () => {
               <span>Sign up now and add your first contact</span>
             </NavLink>
           </div>
-            {/* <img src={img} alt="img" width='100px' height='100px'/> */}
         </div>
 
         <div>
@@ -61,8 +58,16 @@ const Home = () => {
           </svg>
         </div>
       </div>
-      <div className={css.content}>
-        <p>By.Goodkatz | Free to use </p>
+      <div>
+        <p className={css.linkForMe}>
+          Created by
+          <a
+            href="https://www.linkedin.com/in/ihor-vozniak2004/"
+            className={css.linkForMe2}
+          >
+            Ihor Vozniak
+          </a>
+        </p>
       </div>
     </>
   );

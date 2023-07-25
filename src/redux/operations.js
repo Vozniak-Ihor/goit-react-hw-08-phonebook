@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { instance , setAuthHeader} from './auth/operations';
 

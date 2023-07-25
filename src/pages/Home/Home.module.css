@@ -174,3 +174,11 @@ svg {
   font-weight: 100;
   text-transform: uppercase;
 }
+
+.linkForMe{
+  display: flex;
+ justify-content: center;}
+
+ .linkForMe2{
+margin-left: 5px;
+ }

@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginThunk } from 'redux/auth/operations';
+import { isLoadingSelector } from '../../../redux/auth/selectors';
 
 import css from './Login.module.css';
 const Login = () => {
-  
+  const isLoading = useSelector(isLoadingSelector);
 
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
@@ -55,7 +56,9 @@ const Login = () => {
           onChange={handleChange}
           className={css.LoginInput}
         />
-        <button className={css.LoginBtn}>Login</button>
+        <button className={`${css.LoginBtn}`}>
+          {isLoading ? <span className={css.spinner}></span> : 'Login'}
+        </button>
       </form>
     </>
   );
