@@ -14,8 +14,13 @@ const AppBar = () => {
             Home
           </NavLink>
           {isLoggedIn && (
-            <NavLink to="/contacts" className={css.AppBarLink}>
+            <NavLink to="/catalog" className={css.AppBarLink}>
               Contants
+            </NavLink>
+          )}
+          {isLoggedIn && (
+            <NavLink to="/favorites" className={css.AppBarLink}>
+              Favorites
             </NavLink>
           )}
           {!isLoggedIn && (

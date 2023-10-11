@@ -8,37 +8,41 @@ import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import RestrictedRoute from '../RestrictedRoute/RestrictedRoute';
 const Home = lazy(() => import('../../pages/Home/Home'));
 const LoginSingUp = lazy(() => import('../../pages/LoginSingUp/LoginSingUp'));
-const Contacts = lazy(() => import('../../pages/Contacts/Contacts'));
+const Catalog = lazy(() => import('../../pages/Catalog/Catalog'));
+const Favorites = lazy(() => import('../../pages/Favorites/Favorites'));
 
 function App() {
-  const dispatch = useDispatch();
+ const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(refreshThunk());
-  }, [dispatch]);
-  return (
-    <Routes>
-      <Route path="/" element={<AppBar />}>
-        <Route index element={<Home />} />
-        <Route
-          path="/registration"
-          element={
-            <RestrictedRoute
-              redirectTo="/contacts"
-              component={<LoginSingUp />}
-            />
-          }
-        />
-        <Route
-          path="/contacts"
-          element={
-            <PrivateRoute redirectTo="/registration" component={<Contacts />} />
-          }
-        />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Route>
-    </Routes>
-  );
+ useEffect(() => {
+  dispatch(refreshThunk());
+ }, [dispatch]);
+ return (
+  <Routes>
+   <Route path="/" element={<AppBar />}>
+    <Route index element={<Home />} />
+    <Route
+     path="/registration"
+     element={
+      <RestrictedRoute redirectTo="/catalog" component={<LoginSingUp />} />
+     }
+    />
+    <Route
+     path="/catalog"
+     element={
+      <PrivateRoute redirectTo="/registration" component={<Catalog />} />
+     }
+    />
+    <Route
+     path="/favorites"
+     element={
+      <PrivateRoute redirectTo="/registration" component={<Favorites />} />
+     }
+    />
+    <Route path="*" element={<Navigate to="/" replace />} />
+   </Route>
+  </Routes>
+ );
 }
 
 export default App;
