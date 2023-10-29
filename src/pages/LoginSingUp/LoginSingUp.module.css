@@ -1,0 +1,82 @@
+.SignUpConteiner {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Jost', sans-serif;
+  background: linear-gradient(to bottom, #6f00af, #302b63, #270192);
+}
+
+/* ============================SignUpForm ============================================= */
+
+.SignUpForm {
+  width: 455px;
+  height: 650px;
+  background: red;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #6f00af, #302b63, #270192);
+  border-radius: 10px;
+  box-shadow: 5px 20px 50px #000;
+}
+.chk {
+  display: none;
+}
+
+.SignUp {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.chk:checked ~ .LoginForm {
+  transform: translateY(-600px);
+}
+.chk:checked ~ .LoginForm .SignUpLabel {
+  transform: scale(1);
+}
+.chk:checked ~ .SignUp .SignUpLabel {
+  transform: scale(0.6);
+}
+/* ============================LoginForm============================= */
+
+.LoginForm {
+  height: 598px;
+  background: #eee;
+  border-radius: 78% / 10%;
+  transform: translateY(-180px);
+  transition: 0.8s ease-in-out;
+}
+
+.LoginForm .LoginLabel {
+  color: #573b8a;
+  transform: scale(0.6);
+}
+
+.chk:checked ~ .LoginForm .LoginLabel {
+  transform: scale(1);
+}
+.chk:checked ~ .Login .LoginLabel {
+  transform: scale(0.6);
+}
+
+/* ============================LoginForm============================= */
+
+/* ============================backBtn============================= */
+
+.backBtn {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  padding: 15px;
+  border-radius: 15px;
+  transition: 0.5s ease-in-out;
+}
+
+.backBtn:hover {
+  cursor: pointer;
+  background-color: #cfcece;
+  box-shadow: 5px 5px #000;
+}
+/* ============================backBtn============================= */
